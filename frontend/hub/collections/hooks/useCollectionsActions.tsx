@@ -1,5 +1,5 @@
 import { ButtonVariant } from '@patternfly/react-core';
-import { BanIcon, TrashIcon, UploadIcon, KeyIcon } from '@patternfly/react-icons';
+import { BanIcon, TrashIcon, UploadIcon, KeyIcon, PlusIcon } from '@patternfly/react-icons';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
@@ -33,6 +33,15 @@ export function useCollectionsActions(callback: (collections: CollectionVersionS
         isPinned: true,
         label: t('Upload collection'),
         onClick: () => pageNavigate(HubRoute.UploadCollection),
+      },
+      {
+        type: PageActionType.Button,
+        selection: PageActionSelection.Multiple,
+        icon: PlusIcon,
+        variant: ButtonVariant.primary,
+        isPinned: true,
+        label: t('Build environment'),
+        onClick: () => pageNavigate(HubRoute.BuildEnvironmentWizard),
       },
       { type: PageActionType.Seperator },
       {

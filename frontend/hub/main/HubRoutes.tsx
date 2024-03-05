@@ -24,6 +24,7 @@ export enum HubRoute {
   CollectionImportLog = 'hub-collection-page-import-log',
   CollectionDistributions = 'hub-collection-distributions',
   CollectionDependencies = 'hub-collection-dependencies',
+  BuildEnvironmentWizard = 'hub-build-environment-wizard',
 
   ExecutionEnvironments = 'hub-execution-environments',
   EditExecutionEnvironment = 'hub-edit-execution-environment',

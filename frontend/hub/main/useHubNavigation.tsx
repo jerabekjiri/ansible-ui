@@ -62,6 +62,7 @@ import { Namespaces } from '../namespaces/HubNamespaces';
 import { HubOverview } from '../overview/HubOverview';
 import { HubRoute } from './HubRoutes';
 import { MyImports } from '../my-imports/MyImports';
+import { BuildEnvironmentWizard } from '../collections/BuildEnvironmentWizard/BuildEnvironmentWizard';
 
 export function useHubNavigation() {
   const { t } = useTranslation();
@@ -133,6 +134,11 @@ export function useHubNavigation() {
           id: HubRoute.CollectionSignatureUpload,
           path: 'signature-upload',
           element: <CollectionSignatureUpload />,
+        },
+        {
+          id: HubRoute.BuildEnvironmentWizard,
+          path: 'build-environment',
+          element: <BuildEnvironmentWizard />,
         },
         {
           id: HubRoute.CollectionPage,
