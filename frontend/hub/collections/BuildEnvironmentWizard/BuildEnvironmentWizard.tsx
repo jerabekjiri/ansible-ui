@@ -11,8 +11,12 @@ import {
 } from '../../../../framework';
 import { HubRoute } from '../../main/HubRoutes';
 import { hubErrorAdapter } from '../../common/adapters/hubErrorAdapter';
-import { Collection } from '../Collection';
+import { Collection, CollectionVersion, CollectionVersionSearch } from '../Collection';
 import { SelectCollectionsStep } from './steps/SelectCollectionsStep';
+import { getQueryString, QueryParams } from '../../common/api/hub-api-utils';
+import { useEffect } from 'react';
+import { useSearchParams } from '../../../../framework/components/useSearchParams';
+
 
 export interface BuildEnvironment {
   collections: Collection[];
@@ -21,6 +25,17 @@ export interface BuildEnvironment {
 export function BuildEnvironmentWizard() {
   const { t } = useTranslation();
   const getPageUrl = useGetPageUrl();
+
+  // const params = new URLSearchParams();
+
+  // const [searchParams, setSearchParams] = useSearchParams();
+
+  // const [searchParams] = useSearchParams();
+  // const collectionParams = searchParams.get('collections');
+  // console.log(collectionParams);
+  // useEffect(() => {
+  //   setSearchParams()
+  // },[]);
 
   const steps: PageWizardStep[] = [
     {
@@ -51,6 +66,7 @@ export function BuildEnvironmentWizard() {
         ]}
       />
       <PageWizard<BuildEnvironment>
+        disableGrid
         steps={steps}
         defaultValue={initialValues}
         onSubmit={handleSubmit}
